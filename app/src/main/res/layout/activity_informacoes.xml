@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.InformacoesActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_informacoes"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="@color/Grey3"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/text_repositorios">
+
+
+            <ImageView
+                android:id="@+id/botao_voltar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_voltar"
+                android:padding="10dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+
+            <ImageView
+                android:id="@+id/foto_usuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+            <TextView
+                android:id="@+id/nome_usuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="nome do usuario"
+                android:textSize="25dp"
+                android:layout_margin="10dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/foto_usuario"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <View
+            app:layout_constraintBottom_toTopOf="@id/text_repositorios"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/Grey"/>
+        <TextView
+            android:id="@+id/text_repositorios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            android:text="Repositórios"/>
+        <View
+            app:layout_constraintTop_toBottomOf="@id/text_repositorios"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/Grey"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="vertical"
+            app:shimmer_duration="800">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <include layout="@layout/shimmer_repositorio" />
+                <include layout="@layout/shimmer_repositorio" />
+                <include layout="@layout/shimmer_repositorio" />
+                <include layout="@layout/shimmer_repositorio" />
+                <include layout="@layout/shimmer_repositorio" />
+                <include layout="@layout/shimmer_repositorio" />
+                <include layout="@layout/shimmer_repositorio" />
+                <include layout="@layout/shimmer_repositorio" />
+
+
+            </LinearLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_repositorios"
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="1000dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</ScrollView>
